@@ -21,7 +21,9 @@ public class Ejercicio1_1 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //El mensaje "ha pasado un frame" se muestra cada frame porque esta dentro de la función de "void Update", la cual ejectua el codigo que tenga entre sus llaves ({}) una vez por frame.
+        //El mensaje "ha pasado un frame" se muestra cada frame porque esta
+        //dentro de la función de "void Update", la cual ejectua el codigo que
+        //tenga entre sus llaves ({}) una vez por frame.
         Debug.Log("Ha pasado un frame");
     }
 }
