@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Ejercicio4_5 : MonoBehaviour
 {
+    [SerializeField] string moneda;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +15,16 @@ public class Ejercicio4_5 : MonoBehaviour
         float areaCuadradoResuelta = Cuadrado(20);
         Debug.Log("Con 20cm de lado, el area del cuadrado es de " + areaCuadradoResuelta + " cm^2");
 
-        
-        float cantidadDolaresConvertidos = ConvertirEurosADolares(areaCirculoResuelta, "Dolares");
-        Debug.Log("Ahora el area del ciruclo, es decir " + areaCirculoResuelta +  " es la cantidad de euros que se pasan a dolares,  quedándonos con un total de " + cantidadDolaresConvertidos + " dolares");
-        float cantidadEurosConvertidos = ConvertirDolaresAEuros(areaTringuloResuelta, " Euros");
-        Debug.Log("Ahora el area del triangulo es decir, " + areaTringuloResuelta + "  es la cantidad de dolares que se pasan a euros, quedándonos con un total de " + cantidadEurosConvertidos + " euros");
+        if (moneda == "EURO")
+        {
+            float resultado = Convertir(areaCirculoResuelta);
+            Debug.Log("Usando el area del circulo, que es, " + areaCirculoResuelta + " como cantidad de euros, se convierte a " + resultado + " de dolares");
+        }
+        if (moneda == "DOLAR")
+        {
+            float resultado = Convertir(areaCuadradoResuelta);
+            Debug.Log("Usando el area el cuadrado, que es " + areaCuadradoResuelta + " como cantidad de dolares, se convierte a " + resultado + " de euros");
+        }
     }
 
     // Update is called once per frame
@@ -45,15 +51,19 @@ public class Ejercicio4_5 : MonoBehaviour
         return areaCuadrado;
     }
 
-    float ConvertirEurosADolares(float cantidadEuros, string moneda)
+    float Convertir(float cantidad)
     {
-        float dolaresConvertidos = cantidadEuros * 1.1097f;
-        return dolaresConvertidos;
-    }
-
-    float ConvertirDolaresAEuros(float cantidadDolares, string moneda)
-    {
-        float eurosConvertidos = cantidadDolares * 0.9010f;
-        return eurosConvertidos;
+        float resultado = 0f;
+        if (moneda == "EURO")
+        {
+            Debug.Log("Tienes " + cantidad + " de euros");
+            resultado = cantidad * 1.1124f;
+        }
+        if (moneda == "DOLAR")
+        {
+            Debug.Log("Tienes " + cantidad + " de dolares");
+            resultado = cantidad * 0.8991f;
+        }
+        return resultado;
     }
 }

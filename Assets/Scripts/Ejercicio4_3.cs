@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Ejercicio4_3 : MonoBehaviour
 {
+    [SerializeField] string moneda;
+
     // Start is called before the first frame update
     void Start()
     {
-        float cantidadDolaresConvertidos = ConvertirEurosADolares(110, "Dolares");
-        Debug.Log("110 euros pasados a dolares son, " + cantidadDolaresConvertidos + " dolares");
-        float cantidadEurosConvertidos = ConvertirDolaresAEuros(95, "Euros");
-        Debug.Log("95 dolares pasados a euros son, " + cantidadEurosConvertidos + " euros");
+        if (moneda == "EURO")
+        {
+            float resultado = Convertir(8);
+            Debug.Log("Teniendo, 8 euros, ahora tienes, " + resultado + " de dolares");
+        }
+        if (moneda == "DOLAR")
+        {
+            float resultado = Convertir(12);
+            Debug.Log("Teniendo, 12 dolares, ahora tienes, " + resultado + " de euros");
+        }
     }
 
     // Update is called once per frame
@@ -19,15 +27,23 @@ public class Ejercicio4_3 : MonoBehaviour
   
     }
 
-    float ConvertirEurosADolares (float cantidadEuros, string moneda)
+    float Convertir (float cantidad)
     {
-        float dolaresConvertidos = cantidadEuros * 1.1097f;
-        return dolaresConvertidos;
+        float resultado = 0f;
+        if (moneda == "EURO")
+        {
+            Debug.Log("Tienes " + cantidad + " de euros");
+            resultado = cantidad * 1.1124f;
+        }
+        if (moneda == "DOLAR")
+        {
+            Debug.Log("Tienes " + cantidad + " de dolares");
+            resultado = cantidad * 0.8991f;
+        }
+        return resultado;
     }
 
-    float ConvertirDolaresAEuros (float cantidadDolares, string moneda)
-    {
-        float eurosConvertidos = cantidadDolares * 0.9010f;
-        return eurosConvertidos;
-    }
+   
+
+   
 }
