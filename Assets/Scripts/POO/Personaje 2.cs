@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Personaje : MonoBehaviour
+public class Personaje2 : MonoBehaviour
 {
-    [SerializeField] Arma miArma;
-    [SerializeField] Personaje2 enemigo;
+    [SerializeField] Arma2 miArma2;
+    [SerializeField] Personaje enemigo;
     
     [SerializeField] float vidaInicial = 10f;
     float vida, experiencia, vidaActual;
@@ -25,7 +25,7 @@ public class Personaje : MonoBehaviour
 
     }
 
-    float RecibirCura (float cantidad)
+    float RecibirCura(float cantidad)
     {
         if (cantidad >= 0)
         {
@@ -35,12 +35,12 @@ public class Personaje : MonoBehaviour
         {
             vidaActual = -1;
         }
-        
+
         return vidaActual;
 
     }
 
-    float RecibirDanho (float danho)
+    float RecibirDanho(float danho)
     {
         if (danho >= 0)
         {
@@ -54,12 +54,12 @@ public class Personaje : MonoBehaviour
         return vidaActual;
     }
 
-    void Atacar ()
+    void Atacar()
     {
 
     }
 
-    void Saltar ()
+    void Saltar()
     {
 
     }

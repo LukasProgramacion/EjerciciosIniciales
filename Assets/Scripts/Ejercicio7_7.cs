@@ -2,16 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ejercicio7_1 : MonoBehaviour
+public class Ejercicio7_7 : MonoBehaviour
 {
-    int numero = 1;
+    [SerializeField] int numMinimo = 1, numMaximo = 130;
     // Start is called before the first frame update
     void Start()
     {
-        while ( numero <101)
+        for (int i = numMinimo; i <= numMaximo; i++)
         {
-            Debug.Log("(7_1) El numero es " + numero);
-            numero++;
+            Debug.Log("(7_7) El numero en este caso es " + i);
         }
     }
 

@@ -10,7 +10,7 @@ public class Ejercicio7_3 : MonoBehaviour
     {
         while (numero < 100 && numero >= 1)
         {
-            Debug.Log("El numero esta vez es " + numero);
+            Debug.Log("(7_3) El numero esta vez es " + numero);
             numero--;
         }
     }

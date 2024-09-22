@@ -9,7 +9,7 @@ public class Ejercicio7_4 : MonoBehaviour
     {
         for (int i = 100; i >= 1; i--)
         {
-            Debug.Log("El numero actual ahora es " + i);
+            Debug.Log("(7_4) El numero actual ahora es " + i);
         }
     }
 
