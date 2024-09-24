@@ -6,11 +6,19 @@ public class Arma2 : MonoBehaviour
 {
     [SerializeField] float danhoMinimo = 10f, danhoMaximo = 100f, capacidadTotal = 200f;
     [SerializeField] bool automatica = false;
-    float municionActual = 15f;
+    float municionActual = 15f, municionRestada, cantidadDanhoRealizado;
+
+    public float DanhoMaximo { get => danhoMaximo; set => danhoMaximo = value; }
+    public float MunicionRestada { get => municionRestada; set => municionRestada = value; }
+    public float CantidadDanhoRealizado { get => cantidadDanhoRealizado; set => cantidadDanhoRealizado = value; }
+    public float MunicionActual { get => municionActual; set => municionActual = value; }
+    public float CapacidadTotal { get => capacidadTotal; set => capacidadTotal = value; }
+
     // Start is called before the first frame update
     void Start()
     {
-
+        cantidadDanhoRealizado = Random.Range(danhoMinimo, danhoMaximo + 1);
+        municionActual = capacidadTotal;
     }
 
     // Update is called once per frame
@@ -19,11 +27,12 @@ public class Arma2 : MonoBehaviour
 
     }
 
-    float UtilizarArma(float cantidad = 1f)
+    public float UtilizarArma(float cantidad = 1f)
     {
         if (municionActual > 0)
         {
-            float municionRestada = municionActual - cantidad;
+            municionRestada = municionActual - cantidad;
+            municionRestada = 0;
             return municionRestada;
         }
         else
@@ -32,7 +41,7 @@ public class Arma2 : MonoBehaviour
             return municionActual;
         }
     }
-    float RecargarArma()
+    public float RecargarArma()
     {
         if (municionActual != capacidadTotal)
         {

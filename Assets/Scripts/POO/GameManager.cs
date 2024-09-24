@@ -27,4 +27,10 @@ public class GameManager : MonoBehaviour
         }
 
     }
+
+    /*void FinDeTurno()
+    {
+        mario.MiTurno = false;
+    }
+    */
 }
