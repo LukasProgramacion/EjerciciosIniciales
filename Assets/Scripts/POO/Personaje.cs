@@ -14,6 +14,7 @@ public class Personaje : MonoBehaviour
     [SerializeField] float vidaInicial = 10f;
     float vida, experiencia, vidaActual;
     string nombre;
+    bool miTurno;
 
     #region getters and setters
     public float Vida { get => vida; set => vida = value; }
